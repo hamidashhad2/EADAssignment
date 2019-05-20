@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Front</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akronim&amp;subset=latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allan">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amarante">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arbutus">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+</head>
+
+<body style="background-image:url(&quot;assets/img/Wallpapers 1536x864.jpg&quot;);background-position:top;background-size:auto;background-repeat:repeat;">
+    <div class="row justify-content-center align-items-center">
+        <div class="col">
+            <h1 class="text-monospace text-capitalize text-center text-info bg-light" style="margin:56px;padding:20px;font-size:64px;font-family:Aclonica, sans-serif;">Snake Mania</h1>
+        </div>
+    </div>
+    <div class="col-4 align-self-center m-auto">
+        <div class="row justify-content-center align-items-center">
+            <div class="col justify-content-center align-items-center align-content-center align-self-center m-auto" style="margin:39px;padding:0px;font-size:34px;margin-left:0px;"><button class="btn btn-success btn-block btn-lg d-table-row align-content-center" type="button" style="font-size:50px;width:578px;margin:12px;margin-left:0px;font-family:Arbutus, cursive;" id="play">Play</button></div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center" style="padding-left:0px;"><button class="btn btn-secondary btn-block" type="button" style="margin:19px;width:579px;margin-left:0px;font-size:37px;font-family:Amarante, cursive;" id="score">High Score</button></div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center" style="padding-right:0px;padding-left:0px;"><button class="btn btn-info btn-block" type="button" style="margin-left:0px;width:579px;font-size:40px;font-family:Amarante, cursive;" id="abt">About</button></div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#play").click(function(){
+              window.location = "src/snake.html";
+           });
+            $("#score").click(function(){
+               alert("Name: "+window.localStorage.getItem("name")+"\nScore: "+ window.localStorage.getItem("score"));
+            });
+            $("#abt").click(function(){
+               alert("Develop by Avengers"); 
+            });
+        });
+        
+    </script>
+</body>
+
+</html>
