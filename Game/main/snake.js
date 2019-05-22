@@ -73,7 +73,17 @@ function loop() {
     snake.cells.forEach(function(cell, index) {
 
         // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
-        context.fillRect(cell.x, cell.y, grid-1, grid-1);
+         if(index==0)
+         {
+             context.fillStyle = 'blue';
+             context.fillRect(cell.x, cell.y, grid-1, grid-1);  
+             context.fillStyle = 'green';
+         }
+        else
+        {
+            context.fillRect(cell.x, cell.y, grid-1, grid-1);
+      
+        }
         // snake ate apple
         if (cell.x === apple.x && cell.y === apple.y) {
             snake.maxCells++;
@@ -83,30 +93,18 @@ function loop() {
             score +=10;
             scoreTag.innerText = score;
         }
-        // check collision with all cells after this one (modified bubble sort)
-        for (var i = index + 1; i < snake.cells.length; i++) {
-
-            // snake occupies same space as a body part. reset game
-            if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-                snake.x = 160;
-                snake.y = 160;
-                snake.cells = [];
-                snake.maxCells = 4;
-                snake.dx = grid;
-                snake.dy = 0;
-                apple.x = getRandomInt(0, 25) * grid;
-                apple.y = getRandomInt(0, 20) * grid;
-                cancelAnimationFrame(animatoinRef);
-                context.font = "60px Georgia";
-                var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-                gradient.addColorStop("0"," magenta");
-                gradient.addColorStop("0.5", "blue");
-                gradient.addColorStop("1.0", "red");
-                context.fillStyle = gradient;
-                context.fillText("Game Over",270, 320,);
-                alert("Game Over");
-            }
-        }
+        
+        // snake occupies same space as a body part. reset game
+      if (cell.x === snake.x && cell.y === snake.y && index !=0 ) {
+        snake.x = 160;
+        snake.y = 160;
+        snake.cells = [];
+        snake.maxCells = 4;
+        snake.dx = grid;
+        snake.dy = 0;
+        apple.x = getRandomInt(0, 25) * grid;
+        apple.y = getRandomInt(0, 25) * grid;
+    }
     });
 }
 // listen to keyboard events to move the snake
