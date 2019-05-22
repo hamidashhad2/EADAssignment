@@ -18,13 +18,15 @@
     background-color: #0c5460;
   }
   </style>
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div class="container">
+  <div >
     <div>
     <div style="text-align:center"><span style="font-size: 35px">Snake Game</span></div>
     <div style="float: right"><span style="font-size: 25px">Score: </span><span id="score" style="font-size: 25px"></span></div>
-    <div style="float: left"><button onclick="location.reload()">Reset</button></div>
+    <div style="float: left"><button onclick="location = '../index.html'" class="btn btn-ino">Go Back</button>&nbsp;&nbsp;</div>
+    <div style="float: left"><button onclick="location.reload()" class="btn btn-warning">Reset</button></div>
     </div>
     <canvas width="800" height="640" id="game"></canvas>
   </div>
